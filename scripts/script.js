@@ -119,29 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const isOpened = card.getAttribute("data-opened") === "true";
-    if (!isOpened) {
-      card.setAttribute("data-opened", "true");
-    }
-  });
-});
 
-
-sliderItems.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    if (!item.classList.contains("back-rotate")) {
-      sliderContent[index].style.transform = "rotateY(180deg)";
-      sliderContent[index].style.opacity = "1";
-      item.classList.add("back-rotate");
-    } else {
-      sliderContent[index].style.transform = "rotateY(0deg)";
-      sliderContent[index].style.opacity = "0";
-      item.classList.remove("back-rotate");
-    }
-  });
-});
 
 // Скрол сторінки до потрібних абзаців
 var aboutButton = document.getElementById("aboutButton");

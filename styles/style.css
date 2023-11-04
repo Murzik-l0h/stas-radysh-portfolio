@@ -244,12 +244,6 @@
   }
   
   /* Карточки */
-  .card img {
-    width: 70rem;
-    height: 40rem;
-    background: transparent rgba(0, 0, 0, 0.2);
-    border-radius: 100px; 
-  }
     #image{
     opacity: 0.5;
   }
@@ -260,34 +254,6 @@
     box-sizing: border-box;
     transition: all 0.5s;
     border-radius: 100px;
-  }
-  .card-rotate {
-    transform: rotateY(180deg);
-  }
-  .front {
-    position: absolute;
-    transform: scale(1);
-    top: 0;
-    left: 0;
-  }
-  .back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    font-size: 1.9rem;
-    transform: scale(0);
-    top: 0;
-    left: 0;
-    background-color: #705252;
-    border-radius: 100px;
-    color: #fffedb;
-    padding: 20px 40px;
-  }
-  .front-rotate {
-    transform: rotateY(180deg) scale(0);
-  }
-  .back-rotate {
-    transform: rotateY(180deg) scale(1);
   }
   
   .text-portfolio {
@@ -329,7 +295,6 @@
     flex: 0 0 250px;
     height: 250px;
     position: relative;
-    transform: rotateY(0deg);
   }
   .slider-item img {
     width: 100%;
@@ -346,14 +311,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    transform: rotateY(0);
-    transition: transform 0.5s;
-    opacity: 0;
   }
   .slider-content a {
-    transform: scaleX(-1);
     text-align: center;
     margin: 0.3rem;
     font-size: 0.7rem;
@@ -368,10 +329,7 @@
   .slider-content a:nth-child(2) {
     margin-top: 1rem;
   }
-  .slider-item:click .slider-content {
-    transform: rotateY(180deg);
-    opacity: 1;
-  }
+
   .slider-controls {
     display: flex;
     margin-top: 2.5rem;
@@ -397,57 +355,26 @@
   }
   /* Футер */
   .footer-text {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-direction: column;
     padding-top: 1rem;
     font-weight: bold;
-  }
-  
-  .footer-first-block {
-    text-align: left;
-  }
-  
-  .footer-first-block p {
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 2rem;
-    font-family: "Montserrat";
-    font-size: 1rem;
   }
-  .footer-first-block a,
-  .footer-second-block a,
-  .footer-third-block a {
+  .footer-text a {
     text-decoration: none;
     color: black;
   }
-  .footer-second-block p {
-    padding-bottom: 2rem;
+  
+  .footer-text li {
     font-family: "Montserrat";
     font-size: 1rem;
+    padding-bottom: 1rem;
   }
-  .footer-first-block {
-    text-align: center;
-    grid-column: 1 / 2;
-  }
-  
-  .footer-second-block {
-    text-align: center;
-    grid-column: 2 / 3;
-  }
-  
-  .footer-third-block {
-    justify-content: center;
-    text-align: center;
-    grid-column: 3 / 1;
-  }
-  
-  .footer-third-block p {
-    margin-bottom: 2.3rem;
-    font-size: 1rem;
-    font-family: "Montserrat";
-  }
-  
-  .footer-third-block div {
-    margin-bottom: 2.2rem;
-  }
+
   .column-text {
     display: block;
     font-family: "Montserrat";
@@ -476,6 +403,15 @@
   }
   /* ДЛЯ ПК */
   @media screen and (min-width: 800px) {
+    .footer-text{
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .footer-text li {
+      padding-bottom: 0;
+    }
+
     .logo {
       display: flex;
       padding-top: 2rem;
@@ -599,10 +535,6 @@
       font-weight: bold;
       margin: 0 0 0 6rem;
     }
-    /*   
-    .skill-secondblock {
-      text-align: center;
-    } */
   
     .skill-secondblock p {
       padding-bottom: 2rem;
@@ -688,31 +620,8 @@
       flex: 0 0 600px;
       height: 400px;
       position: relative;
-      transform: rotateY(0deg);
-    }
-    .slider-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .slider-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      transform: rotateY(0);
-      transition: transform 0.5s;
-      opacity: 0;
     }
     .slider-content a {
-      transform: scaleX(-1);
       text-align: center;
       margin: 0.5rem;
       font-size: 1rem;
@@ -726,10 +635,6 @@
     }
     .slider-content a:nth-child(2) {
       margin-top: 1.5rem;
-    }
-    .slider-item:hover .slider-content {
-      transform: rotateY(180deg);
-      opacity: 1;
     }
     .slider-controls {
       display: flex;
@@ -755,57 +660,7 @@
       margin: 0 6rem;
     }
     /* ФУТЕР */
-    .footer-text {
-      display: grid;
-      grid-template-columns: 34% 33% 33%;
-      padding-top: 1rem;
-      font-weight: bold;
-    }
-  
-    .footer-first-block {
-      text-align: left;
-    }
-  
-    .footer-first-block p {
-      padding-bottom: 2rem;
-      font-family: "Montserrat";
-      font-size: 1rem;
-    }
-    .footer-first-block a,
-    .footer-second-block a,
-    .footer-third-block a {
-      text-decoration: none;
-      color: black;
-    }
-    .footer-second-block p {
-      padding-bottom: 2rem;
-      font-family: "Montserrat";
-      font-size: 1rem;
-    }
-    .footer-first-block {
-      text-align: center;
-      grid-column: 1 / 2;
-    }
-  
-    .footer-second-block {
-      text-align: center;
-      grid-column: 2 / 3;
-    }
-  
-    .footer-third-block {
-      text-align: center;
-      grid-column: 3 / 3;
-    }
-  
-    .footer-third-block p {
-      margin-bottom: 2.3rem;
-      font-size: 1rem;
-      font-family: "Montserrat";
-    }
-  
-    .footer-third-block div {
-      margin-bottom: 2.2rem;
-    }
+
     .column-text {
       display: block;
       font-family: "Montserrat";
